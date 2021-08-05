@@ -3,7 +3,7 @@
 
 void some_game_code(Game_Memory* game_memory, Platform_Functions platform_functions) {
     char buffer[100] = {};
-    sprintf(buffer, "Change me at runtime and recompile (also counter: %.1f)", game_memory->counter/10.0f);
+    sprintf(buffer, "Change me at runtime and recompile! (also counter: %.1f)", game_memory->counter/10.0f);
     platform_functions.show_message(buffer);
 }
 

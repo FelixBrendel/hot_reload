@@ -3,8 +3,6 @@
 #include "platform.hpp"
 #include "game.hpp"
 
-const char* game_dll_name = "game.dll";
-
 struct Game_Lib {
     Game_Functions game_functions;
     HMODULE  dll_handle;
