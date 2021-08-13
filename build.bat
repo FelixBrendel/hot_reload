@@ -26,12 +26,12 @@ tasklist /fi "ImageName eq %app_name%" /fo csv 2> NUL | find /I "%app_name%" > N
 if "%ERRORLEVEL%" == "0" goto hot_reload
 
 :: compiling the platform
-cl /nologo /std:c++latest ^
+cl /nologo /Z7 /std:c++latest ^
    /Dgame_dll_name=\"%game_dll_name%\" ^
    /Fo: obj\ /Fe: %app_name% ^
    ..\src\platform_windows.cpp ^
    /link /INCREMENTAL:NO ^
-   -PDB:%app_name%.pdb user32.lib kernel32.lib || exit /b 1
+   user32.lib kernel32.lib || exit /b 1
 
 goto end
 
